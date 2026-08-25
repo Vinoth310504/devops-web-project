@@ -3,6 +3,12 @@ pipeline {
 
     stages {
 
+        stage('Git Status') {
+            steps {
+                sh 'git status'
+            }
+        }
+
         stage('Docker Build') {
             steps {
                 sh 'docker build -t devops-web:latest .'
